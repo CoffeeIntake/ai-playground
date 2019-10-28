@@ -9,6 +9,11 @@ namespace ConsoleApp1ML.Model
         [ColumnName("Label"), LoadColumn(0)]
         public bool Label { get; set; }
 
+
+        [ColumnName("rev_id"), LoadColumn(1)]
+        public float Rev_id { get; set; }
+
+
         [ColumnName("comment"), LoadColumn(2)]
         public string Comment { get; set; }
 
