@@ -12,27 +12,23 @@ namespace ConsoleApp1ML.ConsoleApp
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Creating new Model...");
-            ModelBuilder.CreateModel();
-            Console.WriteLine("Model Created! Press any key to exit");
-            Console.ReadKey();
-            //while (true)
-            //{
-            //    Console.WriteLine("Input something vaguely not vulgar.");
-            //    // Create single instance of sample data from first line of dataset for model input
-            //    ModelInput sampleData = new ModelInput();
-            //    sampleData.Comment = Console.ReadLine();
+            while (true)
+            {
+                Console.WriteLine("Input something vaguely not vulgar.");
+                // Create single instance of sample data from first line of dataset for model input
+                ModelInput sampleData = new ModelInput();
+                sampleData.Comment = Console.ReadLine();
 
-            //    // Make a single prediction on the sample data and print results
-            //    ModelOutput predictionResult = ConsumeModel.Predict(sampleData);
+                // Make a single prediction on the sample data and print results
+                ModelOutput predictionResult = ConsumeModel.Predict(sampleData);
 
-            //    Console.WriteLine($"\nToxic Prediction (True if Toxic): {predictionResult.Prediction}\n\n");
+                Console.WriteLine($"\nToxic Prediction (True if Toxic): {predictionResult.Prediction}\n\n");
 
-            //    if(predictionResult.Prediction == true)
-            //    {
-            //        return;
-            //    }
-            //}
+                if(predictionResult.Prediction == true)
+                {
+                    return;
+                }
+            }
         }
     }
 }
