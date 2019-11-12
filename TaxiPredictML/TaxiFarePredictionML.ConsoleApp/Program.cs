@@ -13,7 +13,7 @@ namespace TaxiFarePredictionML.ConsoleApp
     class Program
     {
         //Dataset to use for predictions 
-        private const string DATA_FILEPATH = @"C:\Users\MiMcGraw\source\repos\TaxiFarePrediction\TaxiFarePrediction\Data\taxi-fare-train.csv";
+        private const string DATA_FILEPATH = @"..\..\..\..\TaxiFarePrediction\Data\taxi-fare-train.csv";
 
         static void Main(string[] args)
         {
