@@ -23,6 +23,8 @@ namespace SentimentAnalysis
             UseModelWithSingleItem(mlContext, model);
             UseModelWithBatchItems(mlContext, model);
             
+
+
         }
         public static TrainTestData LoadData(MLContext mlContext)
         {
@@ -32,8 +34,7 @@ namespace SentimentAnalysis
         }
         public static ITransformer BuildAndTrainModel(MLContext mlContext, IDataView splitTrainSet)
         {
-            var estimator = mlContext.Transforms.Text.FeaturizeText(outputColumnName: "Features", inputColumnName: nameof(SentimentData.SentimentText));
-            .Append(mlContext.BinaryClassification.Trainers.SdcaLogisticRegression(labelColumnName: "Label", featureColumnName: "Features"));
+            var estimator = mlContext.Transforms.Text.FeaturizeText(outputColumnName: "Features", inputColumnName: nameof(SentimentData.SentimentText)).Append(mlContext.BinaryClassification.Trainers.SdcaLogisticRegression(labelColumnName: "Label", featureColumnName: "Features"));
             Console.WriteLine("=============== Create and Train the Model ===============");
             var model = estimator.Fit(splitTrainSet);
             Console.WriteLine("=============== End of training ===============");
@@ -74,7 +75,7 @@ namespace SentimentAnalysis
         public static void UseModelWithBatchItems(MLContext mlContext, ITransformer model)
         {
             IEnumerable<SentimentData> sentiments = new[]
-            {
+{
                 new SentimentData
                 {
                     SentimentText = "This was a horrible meal"
@@ -83,6 +84,7 @@ namespace SentimentAnalysis
                  {
                     SentimentText = "I love this spaghetti."
                  }
+
             };
             IDataView batchComments = mlContext.Data.LoadFromEnumerable(sentiments);
 
@@ -91,6 +93,7 @@ namespace SentimentAnalysis
             // Use model to predict whether comment data is Positive (1) or Negative (0).
             IEnumerable<SentimentPrediction> predictedResults = mlContext.Data.CreateEnumerable<SentimentPrediction>(predictions, reuseRowObject: false);
             Console.WriteLine();
+
 
             Console.WriteLine("=============== Prediction Test of loaded model with multiple samples ===============");
             foreach (SentimentPrediction prediction in predictedResults)
