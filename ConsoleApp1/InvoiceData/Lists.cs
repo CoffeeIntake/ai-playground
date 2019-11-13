@@ -12,15 +12,9 @@
         public static IEnumerable<T> GetList<T>(string query)
         {
             List<T> results = new List<T>();
+            object value;
 
-            string odbcDriver = @"{TIMBERLINE DATA}";
-            string dataFolderPath = @"C:\repos\source\Main\Library Sets\STO\Libraries\Legacy\DemoData\Ext GC DemoData\";
-            string userName = "1";
-            string password = userName;
-
-            var connectionString = System.String.Format(System.Globalization.CultureInfo.InvariantCulture,
-                @"Driver={0};dbq={1};uid={2};pwd={3};codepage=1252;shortennames=0;standardmode=1;maxcolsupport=1536",
-                odbcDriver, dataFolderPath, userName, password);
+            var connectionString = Configuration.Instance.GetConnectionString();
 
             using (var connection = new OdbcConnection(connectionString))
             {
@@ -45,15 +39,25 @@
                                     // TODO: Check types on the properties I have.  Good to commit for now.
                                     foreach (var property in properties)
                                     {
-                                        property.SetValue(result, reader[property.Name.Replace(" ","_")]);
+                                        value = reader[property.Name];
+
+                                        if (property.PropertyType == typeof(string))
+                                            property.SetValue(result, value.ToString());
+                                        else if (property.PropertyType == typeof(int))
+                                            property.SetValue(result, (int)value);
+                                        else if (property.PropertyType == typeof(double))
+                                            property.SetValue(result, (double)value);
                                     }
 
+                                    results.Add(result);
                                 }
                                 catch (Exception ex)
                                 {
                                     string message = "Handle errors better: " + ex.ToString();
                                     Console.WriteLine(message);
                                 }
+
+
                             }
                         }
                     }

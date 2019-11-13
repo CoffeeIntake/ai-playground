@@ -30,14 +30,19 @@
 
         public string GetConnectionString()
         {
-                return System.String.Format(System.Globalization.CultureInfo.InvariantCulture,
-                    @"Driver={0};dbq={1};uid={2};pwd={3};codepage=1252;shortennames=0;standardmode=1;maxcolsupport=1536",
-                    _driver, DataFolderPath, UserName, Password);
+            var cs = System.String.Format(System.Globalization.CultureInfo.InvariantCulture,
+                        @"Driver={0};dbq={1};uid={2};pwd={3};codepage=1252;shortennames=0;standardmode=1;maxcolsupport=1536",
+                        _driver, DataFolderPath, UserName, Password);
+            return cs;
         }
 
         public void Save()
         {
-
+            using (var writer = new System.IO.StreamWriter(_configPath))
+            {
+                var contents = JsonConvert.SerializeObject(this);
+                writer.Write(contents);
+            }
         }
 
         private static Configuration LoadConfig()
@@ -46,8 +51,10 @@
             
             if (!System.IO.File.Exists(_configPath))
             {
-
+                var config = new Configuration();
+                config.Save();
             }
+
             using (var reader = new System.IO.StreamReader(_configPath))
             {
                 var contents = reader.ReadToEnd();

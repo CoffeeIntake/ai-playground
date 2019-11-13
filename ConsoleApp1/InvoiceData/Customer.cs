@@ -8,6 +8,6 @@
     {
         public string Contact_ID { get; set; }
         public string Contact_name { get; set; }
-        public int Type { get; set; }
+        public string Type { get; set; }
     }
 }
