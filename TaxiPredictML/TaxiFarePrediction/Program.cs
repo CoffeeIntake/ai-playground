@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+﻿using System;
+=======
 using System;
+>>>>>>> master
 using TaxiFarePredictionML.Model;
 
 namespace TaxiFarePrediction
