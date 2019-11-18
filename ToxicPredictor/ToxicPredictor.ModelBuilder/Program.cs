@@ -1,7 +1,7 @@
-﻿namespace ConsoleApp1ML.ModelRebuilder
+﻿namespace ToxicPredictor.ModelRebuilder
 {
-    using ConsoleApp1ML.ConsoleApp;
     using System;
+    using ToxicPredictor.ConsoleApp;
 
     class Program
     {
