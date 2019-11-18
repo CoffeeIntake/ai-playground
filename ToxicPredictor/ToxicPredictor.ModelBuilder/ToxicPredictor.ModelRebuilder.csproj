@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp1ML.ConsoleApp\ConsoleApp1ML.ConsoleApp.csproj" />
+    <ProjectReference Include="..\ToxicPredictor.ConsoleApp\ToxicPredictor.ConsoleApp.csproj" />
   </ItemGroup>
 
 </Project>

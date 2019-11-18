@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1ML.Model", "ConsoleApp1ML.Model\ConsoleApp1ML.Model.csproj", "{3F892769-DA2D-4A97-B4F4-6201443C15C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToxicPredictor.Model", "ToxicPredictor.Model\ToxicPredictor.Model.csproj", "{3F892769-DA2D-4A97-B4F4-6201443C15C1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1ML.ConsoleApp", "ConsoleApp1ML.ConsoleApp\ConsoleApp1ML.ConsoleApp.csproj", "{00188470-2515-414D-8026-62AD8918FFF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToxicPredictor.ConsoleApp", "ToxicPredictor.ConsoleApp\ToxicPredictor.ConsoleApp.csproj", "{00188470-2515-414D-8026-62AD8918FFF9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1ML.ModelRebuilder", "ConsoleApp1ML.ModelBuilder\ConsoleApp1ML.ModelRebuilder.csproj", "{A349AFC4-E476-4D5D-BCAB-699F42F70676}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToxicPredictor.ModelRebuilder", "ToxicPredictor.ModelBuilder\ToxicPredictor.ModelRebuilder.csproj", "{A349AFC4-E476-4D5D-BCAB-699F42F70676}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

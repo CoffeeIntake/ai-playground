@@ -6,15 +6,15 @@ using System.IO;
 using System.Linq;
 using Microsoft.ML;
 using Microsoft.ML.Data;
-using ConsoleApp1ML.Model;
 using Microsoft.ML.Trainers;
+using ToxicPredictor.Model;
 
-namespace ConsoleApp1ML.ConsoleApp
+namespace ToxicPredictor.ConsoleApp
 {
     public static class ModelBuilder
     {
         private static string TRAIN_DATA_FILEPATH = @"../../../../../wikiDetoxAnnotated40kRows.txt";
-        private static string MODEL_FILEPATH = @"../../../../ConsoleApp1ML.Model/MLModel.zip";
+        private static string MODEL_FILEPATH = @"../../../../ToxicPredictor.Model/MLModel.zip";
 
         // Create MLContext to be shared across the model creation workflow objects 
         // Set a random seed for repeatable/deterministic results across multiple trainings.

@@ -2,7 +2,7 @@
 
 using Microsoft.ML.Data;
 
-namespace ConsoleApp1ML.Model
+namespace ToxicPredictor.Model
 {
     public class ModelInput
     {
