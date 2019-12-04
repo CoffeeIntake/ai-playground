@@ -13,5 +13,5 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: docker build -f ConsoleApp1/Dockerfile ConsoleApp1
+- script: docker build -f ToxicPredictor/Dockerfile ToxicPredictor
   displayName: 'Run a one-line script'
