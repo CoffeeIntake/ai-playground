@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToxicPredictor.ConsoleApp",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToxicPredictor.ModelRebuilder", "ToxicPredictor.ModelBuilder\ToxicPredictor.ModelRebuilder.csproj", "{A349AFC4-E476-4D5D-BCAB-699F42F70676}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceData", "InvoiceData\InvoiceData.csproj", "{93CBECCC-68D0-4D2D-95CD-58B10CC0917D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CRE300.InvoiceData", "Sage.CRE300.InvoiceData\Sage.CRE300.InvoiceData.csproj", "{93CBECCC-68D0-4D2D-95CD-58B10CC0917D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceDataTester", "InvoiceDataTester\InvoiceDataTester.csproj", "{B43B0F8D-E45F-49B0-8A51-EE05E6743724}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CRE300.InvoiceData.Tests", "Sage.CRE300.InvoiceData.Tests\Sage.CRE300.InvoiceData.Tests.csproj", "{BF683535-EC4A-4650-BE16-7ED5125910C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,14 +53,14 @@ Global
 		{93CBECCC-68D0-4D2D-95CD-58B10CC0917D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{93CBECCC-68D0-4D2D-95CD-58B10CC0917D}.Release|x86.ActiveCfg = Release|Any CPU
 		{93CBECCC-68D0-4D2D-95CD-58B10CC0917D}.Release|x86.Build.0 = Release|Any CPU
-		{B43B0F8D-E45F-49B0-8A51-EE05E6743724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B43B0F8D-E45F-49B0-8A51-EE05E6743724}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B43B0F8D-E45F-49B0-8A51-EE05E6743724}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B43B0F8D-E45F-49B0-8A51-EE05E6743724}.Debug|x86.Build.0 = Debug|Any CPU
-		{B43B0F8D-E45F-49B0-8A51-EE05E6743724}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B43B0F8D-E45F-49B0-8A51-EE05E6743724}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B43B0F8D-E45F-49B0-8A51-EE05E6743724}.Release|x86.ActiveCfg = Release|Any CPU
-		{B43B0F8D-E45F-49B0-8A51-EE05E6743724}.Release|x86.Build.0 = Release|Any CPU
+		{BF683535-EC4A-4650-BE16-7ED5125910C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF683535-EC4A-4650-BE16-7ED5125910C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF683535-EC4A-4650-BE16-7ED5125910C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BF683535-EC4A-4650-BE16-7ED5125910C3}.Debug|x86.Build.0 = Debug|Any CPU
+		{BF683535-EC4A-4650-BE16-7ED5125910C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF683535-EC4A-4650-BE16-7ED5125910C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF683535-EC4A-4650-BE16-7ED5125910C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{BF683535-EC4A-4650-BE16-7ED5125910C3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

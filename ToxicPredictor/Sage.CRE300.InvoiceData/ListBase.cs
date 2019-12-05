@@ -1,4 +1,4 @@
-﻿namespace InvoiceData
+﻿namespace Sage.CRE300.InvoiceData
 {
     using System;
     using System.Collections.Generic;
@@ -14,7 +14,7 @@
             List<T> results = new List<T>();
             object value;
 
-            var connectionString = Configuration.Instance.GetConnectionString();
+            var connectionString = Configuration.Instance.GetConnectionString(Configuration.DataSources.Consigli);
 
             using (var connection = new OdbcConnection(connectionString))
             {
@@ -40,13 +40,36 @@
                                     foreach (var property in properties)
                                     {
                                         value = reader[property.Name];
+                                        Type valueType = value.GetType();
 
-                                        if (property.PropertyType == typeof(string))
-                                            property.SetValue(result, value.ToString());
-                                        else if (property.PropertyType == typeof(int))
-                                            property.SetValue(result, (int)value);
-                                        else if (property.PropertyType == typeof(double))
-                                            property.SetValue(result, (double)value);
+                                        try
+                                        { 
+                                            if (value != DBNull.Value)
+                                            {
+                                                if (property.PropertyType == typeof(string))
+                                                    property.SetValue(result, value.ToString());
+                                                else if (property.PropertyType == typeof(Int32))
+                                                    property.SetValue(result, (Int32)value);
+                                                else if (property.PropertyType == typeof(Int64))
+                                                    property.SetValue(result, (Int64)value);
+                                                else if (property.PropertyType == typeof(double))
+                                                    property.SetValue(result, (double)value);
+                                                else if (property.PropertyType == typeof(DateTime))
+                                                    property.SetValue(result, (DateTime)value);
+                                                else if (property.PropertyType == typeof(DateTime?))
+                                                {
+                                                    if (value != DBNull.Value)
+                                                    {
+                                                        property.SetValue(result, (DateTime?)value);
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            Console.WriteLine($"Unable to assign {property.Name} (Type: {valueType.ToString()}): {ex.ToString()}");
+                                        }
                                     }
 
                                     results.Add(result);
